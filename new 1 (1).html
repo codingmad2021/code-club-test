@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Club April</title>
+    <style>
+        #myIframe {
+            width: 100%;
+            height: 300px; /* Initial height */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+	
+    <script>
+ 	<!--THE FIRST TEXT HERE WILL DISPLAY LAST-->
+        const textBlocks = ["Have fun playing your new game",
+	 "Create a new project using the button at the top",
+	 "Choose one of the built in enviroments",
+	"Pick the template that you want to use",
+	"Delete all the existing blocks of code by dragging them to the trash can",
+	"Open the design tab and press plus",
+	"Search for the object that you want the player to collect and when colided with will increasw the score",
+	"When you find one that you like press it to insert it into your scene",
+	"When the object has been inserted and has loaded into the scene you will see three arrows labled X Y and Z X move left and right Y moves up and down Z moves forward and backwards",
+	"Move your coin to the location that you want it to start at",
+	"Go over to the search bar again and search/find an object that you want to use as an ennemey this will be a static(or you could program it to move arround the coin later) object that will subract one from the game when the player hits it",
+	"Click on it to add it into the scene",
+	"Use the X,Y,Z axis's to move it close to the coin",
+	"Open the vairables tab and create a variable named score",
+	"Under the events tab pull out an on start clicked block",
+	"Go into the vairables tab and pull out a set vairable to block and drag it into the on start block",
+	"Under the math tab pull out a number block and drag it into the set vairable to block,once dragged keep this on the deafult value(0)",
+	"You may have noticed that you can move arround in your game at the moment this is because hatchxr pre adds this code behind the scenes ",
+	"Go into your avatar sepecif blocks under scene layers and insert a when {avatar name} colides with block",
+	"Select your coin under the scene layers and pull out the top block it will just be the name of the object drag this into the on collison block ",
+	"Under vairables pull out a change score by 1 block and drag it as the first action in the collison",
+	"Create two more vairables and name one x and the other y ",
+	"Pull out a set vairable to block then put it under the add 1 to score block and set the vairable tp be set to x",
+	"Under math pull out a random number block and put it in the set x to block",
+	"Set the mimum to -20 and the maximum 20",
+	"Repeat this for y but set the minimum to 1",
+	"Under the coin blocks pull out two chance coin x by",
+	"On the first one replace the value 1 with the vairable named x",
+	"On the seccond change the x to y and change the value 1 to the vairable y",
+	"For the enemy pull out an on collison block from the cube then set the colides with to the avatar then change the score vairable by -1  then change the x and the y value of the cube inside the colides with COIN block",
+	"Under the collides with enemy pull out an if statement from the logic tab then from the logic tab pull out an = block but change the = to <",
+	"Set the left value to score then pull out a number block from math and set the number to 0 this means that if the score is les than 0 so -1 or lower the if statement will cary out whatever is inside of it"
+	"Under the do pull out a visibilty block for every single item in scene layers and set the visibility to false this has the effect of making the entire world hide ",
+	"If you want you can add a print out of the score  can you work out how to do this hint: you will need to add some text in the design pannle then use item specific controls to set the text using the set text to block",
+	"To save your project give it a name then press publish, select quick publish and copy the link ",
+	login to your hatchxr account IN A NEW TAB then paste the URL ",
+	"Press remix to save",]
+        let currentIndex = 0;
+
+        function toggleText() {
+            const displayElement = document.getElementById("displayText");
+            currentIndex = (currentIndex + 1) % textBlocks.length;
+            displayElement.textContent = textBlocks[currentIndex];
+        }
+    </script>
+	<p id="displayText">Today we are making a 3D coin collector game using HatchXR </p>
+	<button onclick="toggleText()">Next</button>
+	<iframe id="myIframe" src="https://kids.hatchxr.com"></iframe>
+    <button onclick="adjustSize(1)">Make Bigger</button>
+    <button onclick="adjustSize(-1)">Make Smaller</button>
+    
+	
+    
+	 <script>
+        const iframe = document.getElementById('myIframe');
+        let currentHeight = 300; // Initial height
+
+        function adjustSize(factor) {
+            // Adjust height by 5% (you can change this value)
+            const newHeight = currentHeight + (currentHeight * 0.05 * factor);
+            iframe.style.height = `${newHeight}px`;
+            currentHeight = newHeight;
+        }
+    </script>
+</body>
+</html>
+
+
+</div>
